@@ -1,0 +1,17 @@
+#Main {
+    padding-left: 10px;
+    background-color: aqua;
+}
+
+.styleTests{
+    margin-top: 30px;  
+    padding-left: 10px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 95%;
+}
+
+.inputCor{
+    width: 50px;
+}

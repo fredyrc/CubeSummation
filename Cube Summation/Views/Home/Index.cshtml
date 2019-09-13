@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Cube Summation";
+}
+<div class="row" style="margin-top: 40px">
+    <div class="col-12">
+        <div id="Main">
+            <h1 style="text-align: center">Cube Summation</h1>
+            <h3 style="margin-top: 30px">
+                <label>Número de casos de prueba:<input type="number" id="NumCases" style="width: 100px"></label>
+                <button Id="btnNumCases">Aceptar</button>
+            </h3>
+            <div id="grpNumCases"></div>
+        </div>
+        <div id="loaderCube" data-request-url="@Url.Action("CeateCube", "Home")"></div>
+        <div id="loaderUpdate" data-request-url="@Url.Action("ActionUpdate", "Home")"></div>
+        <div id="loaderQuery" data-request-url="@Url.Action("ActionQuery", "Home")"></div>
+    </div>
+</div>
