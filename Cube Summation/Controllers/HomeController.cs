@@ -20,7 +20,7 @@ namespace Cube_Summation.Controllers
             return View();
         }
 
-        public ActionResult CeateCube(int length, int position)
+        public ActionResult CreateCube(int length, int position)
         {
             if (CurrentCube.ListCube.ContainsKey(position))
                 CurrentCube.ListCube.Remove(position);
@@ -43,7 +43,14 @@ namespace Cube_Summation.Controllers
 
         public ActionResult ActionQuery(ModelQuery query, int position)
         {
-           var result= CurrentCube.ListCube[position].QueryCube(query);
+            if (!CurrentCube.ListCube.ContainsKey(position))
+                return Json(new
+                {
+                    esQuery = false,
+                    result=0
+                });
+
+            var result= CurrentCube.ListCube[position].QueryCube(query);
             return Json(new
             {
                 esQuery = true,

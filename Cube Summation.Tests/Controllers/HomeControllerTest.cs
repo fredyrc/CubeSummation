@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Cube_Summation;
 using Cube_Summation.Controllers;
+using Cube_Summation.Models;
 
 namespace Cube_Summation.Tests.Controllers
 {
@@ -13,7 +14,7 @@ namespace Cube_Summation.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public void IndexNotNull()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -27,7 +28,7 @@ namespace Cube_Summation.Tests.Controllers
 
       
         [TestMethod]
-        public void Contact()
+        public void ContactNotNull()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -38,5 +39,49 @@ namespace Cube_Summation.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+
+        [TestMethod]
+        public void ActionQueryNotNull()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+            ModelQuery modelQuery = new ModelQuery();
+
+            // Act
+            ActionResult result = controller.ActionQuery(modelQuery,0) as ActionResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void CreateCubeNotNull()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ActionResult result = controller.CreateCube(1,0) as ActionResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ActionUpdateNotNull()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+            ModelUpdate update = new ModelUpdate();
+
+            // Act
+            ActionResult result = controller.ActionUpdate(update,0) as ActionResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+
     }
 }
